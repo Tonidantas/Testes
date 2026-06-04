@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.loader {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  border-top-color: #f59e0b;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

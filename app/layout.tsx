@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Container Scroll Animation",
-  description: "Scroll animation demo with framer-motion",
+  title: "Blade & Fade — Premium Barbershop",
+  description: "Onde cada corte é uma obra de arte. Agende seu horário na melhor barbearia premium de São Paulo.",
 };
 
 export default function RootLayout({
