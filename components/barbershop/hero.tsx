@@ -1,7 +1,9 @@
 "use client"
 import { motion } from "framer-motion"
 import { Calendar, Scissors } from "lucide-react"
-import { SplineScene } from "@/components/ui/splite"
+import dynamic from "next/dynamic"
+
+const BarberHeroScene = dynamic(() => import("./barber-hero-scene"), { ssr: false })
 
 const title = "BLADE & FADE"
 
@@ -23,9 +25,7 @@ const stats = [
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-[#080808] overflow-hidden flex items-center pt-16">
-      {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-amber-500/3 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
         {/* LEFT */}
@@ -96,21 +96,18 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT — Spline 3D */}
+        {/* RIGHT — 3-D Barber Scene */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 1.2 }}
           className="h-[500px] md:h-[680px] relative"
         >
-          <SplineScene
-            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-            className="w-full h-full"
-          />
+          <BarberHeroScene />
         </motion.div>
       </div>
 
-      {/* Scroll hint */}
+      {/* scroll hint */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
