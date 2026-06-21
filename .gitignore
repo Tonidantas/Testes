@@ -3,6 +3,9 @@
 /.pnp
 .pnp.js
 
+# browser binaries
+/chrome
+
 # testing
 /coverage
 
